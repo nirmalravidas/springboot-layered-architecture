@@ -19,15 +19,15 @@ public class JobController {
         this.jobService = jobService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<Job>> findAll(){
         return new ResponseEntity<>(jobService.findAll(), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<String> createJob(@RequestBody Job job){
         jobService.createJob(job);
-        return new ResponseEntity<>("Job created successfully", HttpStatus.OK);
+        return new ResponseEntity<>("Job created successfully", HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
