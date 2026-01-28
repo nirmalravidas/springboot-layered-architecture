@@ -1,14 +1,20 @@
 package com.nirmalravidas.SpringBootApplication.model;
 
-import javax.annotation.processing.Generated;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "JOB")
 public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
     private String minSalary;
     private String maxSalary;
     private String location;
+
+    public Job(){ }
 
     public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
         this.id = id;
