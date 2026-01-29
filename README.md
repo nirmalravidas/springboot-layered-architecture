@@ -1,6 +1,6 @@
 # Spring Boot Job Management Application
 
-![Project Architecture Diagram](./thumbnail.png)
+![Project Architecture Diagram](./SpringBootApplication/thumbnail.png)
 
 ## Overview
 
