@@ -23,6 +23,12 @@ public class CompanyController {
         return new ResponseEntity<>(companyService.getAllCompanies(), HttpStatus.OK);
     }
 
+    @PostMapping
+    public ResponseEntity<String> addCompany(@RequestBody Company company){
+        companyService.createCompany(company);
+        return new ResponseEntity<>("Company created successfully", HttpStatus.OK);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<String> updateCompany(@PathVariable Long id, @RequestBody Company company){
         boolean updated = companyService.updateCompany(company, id);
@@ -32,13 +38,7 @@ public class CompanyController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping
-    public ResponseEntity<String> addCompany(@RequestBody Company company){
-        companyService.createCompany(company);
-        return new ResponseEntity<>("Company created successfully", HttpStatus.OK);
-    }
-
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCompanyById(@PathVariable Long id){
         boolean deleted = companyService.deleteCompanyById(id);
         if (deleted) {
@@ -56,5 +56,4 @@ public class CompanyController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
 }

@@ -22,8 +22,6 @@ public class Review {
 
     }
 
-
-
     public Company getCompany() {
         return company;
     }

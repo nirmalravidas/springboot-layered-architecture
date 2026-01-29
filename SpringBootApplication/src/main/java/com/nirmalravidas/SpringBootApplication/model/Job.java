@@ -17,7 +17,9 @@ public class Job {
     @ManyToOne
     private Company company;
 
-    public Job(){ }
+    public Job(){
+
+    }
 
     public Job(Long id, String title, String description, String minSalary, String maxSalary, String location) {
         this.id = id;
@@ -27,8 +29,6 @@ public class Job {
         this.maxSalary = maxSalary;
         this.location = location;
     }
-
-
 
     public Company getCompany() {
         return company;
