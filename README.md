@@ -1,4 +1,4 @@
-# Spring Boot Job Management Application
+# Job Management Application - Spring Boot monolithic REST API application
 
 ![Project Architecture Diagram](./SpringBootApplication/thumbnail.png)
 
